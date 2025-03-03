@@ -1,0 +1,30 @@
+<?php
+    $sql = "SELECT * FROM pain";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "<li>" . $row["name"] . " " . $row["price"] . " " . $row["quantity"] . "</li>";
+        }
+    } else {
+        echo "0 results";
+    }
+
+    $conn->close();
+?>
+
+
+<?php
+    $sql = "SELECT * FROM viennoiserie";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "<li>" . $row["name"] . " " . $row["price"] . " " . $row["quantity"] . "</li>";
+        }
+    } else {
+        echo "0 results";
+    }
+
+    $conn->close();
+?>
